@@ -13,6 +13,18 @@ use App\Models\Galeri;
 use App\Models\Pengumuman;
 use App\Models\Prestasi;
 use App\Models\Kegiatan;
+use App\Models\visi;
+use App\Models\sejarah;
+use App\Models\sarana;
+use App\Models\sambutan;
+use App\Models\kemitraan;
+use App\Models\program;
+use App\Models\komite;
+use App\Models\identitas;
+use App\Models\pendidik;
+use App\Models\siswa;
+use App\Models\alumni;
+use App\Models\StrukturOrganisasi–m;
 class HomeController extends Controller
 {
     /**
@@ -39,7 +51,19 @@ class HomeController extends Controller
         $ekstrakulikuler = esksrakulikuler::count();
         $agenda = Agenda::count();
         $pengumuman = Pengumuman::count();
-        return view('home', compact('galeri','pengumuman', 'prestasi','eskul','berita','instrakulikuler','ekstrakulikuler','agenda'));
+        $sambutan = sambutan::count();
+        $identitas = identitas::count();
+        $visi = visi::count();
+        $sejarah = sejarah::count();
+        $kemitraan = kemitraan::count();
+        $program = program::count();
+        $komite = komite::count();
+        $sarana = sarana::count();
+        $struktur = StrukturOrganisasi–m::count();
+        $alumni = alumni::count();
+        $siswa = siswa::count();
+        $pendidik = pendidik::count();
+        return view('home', compact('galeri','siswa','alumni','pendidik','pengumuman', 'prestasi','eskul','berita','instrakulikuler','ekstrakulikuler','agenda','sambutan','identitas', 'visi','sejarah','kemitraan','program','komite','sarana','struktur'));
     }
    
 }

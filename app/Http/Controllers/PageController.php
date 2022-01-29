@@ -13,6 +13,21 @@ use App\Models\Galeri;
 use App\Models\Pengumuman;
 use App\Models\Prestasi;
 use App\Models\Kegiatan;
+use App\Models\sambutan;
+use App\Models\sejarah;
+use App\Models\visi;
+use App\Models\iden;
+use App\Models\pendidik;
+use App\Models\Surat;
+use App\Models\siswa;
+use App\Models\alumni;
+use App\Models\vidio;
+use App\Models\weblink;
+use App\Models\kontak;
+use App\Models\komite;
+use App\Models\program;
+use App\Models\kemitraan;
+use App\Models\StrukturOrganisasi–m;
 class PageController extends Controller
 {
     public function pesanPost(Request $req)
@@ -32,10 +47,38 @@ class PageController extends Controller
         return redirect()->back()->with('success', 'Data Berhasil Di Simpan');
     }
 
+    public function komite()
+    {
+        $komite = komite::paginate(10);
+        return view('page.komite-sekolah', ['komite' => $komite]);
+    }
+    public function program()
+    {
+        $program = program::paginate(10);
+        return view('page.program-kerja', ['program' => $program]);
+    }
+    public function kemitraan()
+    {
+        $kemitraan = kemitraan::paginate(10);
+        return view('page.kemitraan', ['kemitraan' => $kemitraan]);
+    }
+
     public function prestasi()
     {
         $prestasi = Prestasi::paginate(10);
         return view('page.prestasi', ['prestasi' => $prestasi]);
+    }
+
+    public function sambutan()
+    {
+        $sambutan = sambutan::paginate(10);
+        return view('page.sambutan-kepala-sekolah', ['sambutan' => $sambutan]);
+    }
+
+    public function agenda()
+    {
+        $agendas = Agenda::latest()->get();
+        return view('page.agenda', compact('agendas'));
     }
 
     public function berita()
@@ -43,11 +86,29 @@ class PageController extends Controller
         $berita = Berita::all();
         return view('page.berita', ['berita' => $berita]);
     }
-
+    
     public function galeri()
     {
         $galeri = Galeri::all();
         return view('page.galeri', ['galeri' => $galeri]);
+    }
+
+    public function vidio()
+    {
+        $vidio = vidio::paginate(10);
+        return view('page.vidio', ['vidio' => $vidio]);
+    }
+
+    public function weblink()
+    {
+        $weblink = weblink::paginate(10);
+        return view('welcome', ['weblink' => $weblink]);
+    }
+
+    public function kontak()
+    {
+        $kontak = kontak::paginate(10);
+        return view('kontak', ['kontak' => $kontak]);
     }
 
     public function eskul()
@@ -62,14 +123,71 @@ class PageController extends Controller
         return view('page.detail.lihat-berita', ['berita' => $berita]);
     }
 
+    public function guru()
+    {
+        $pendidik = pendidik::paginate(10);
+        return view('page.direktori-guru', ['pendidik' => $pendidik]);
+    }
+    
+    public function siswa()
+    {
+        $siswa = siswa::paginate(10);
+        return view('page.direktori-siswa', ['siswa' => $siswa]);
+    }
+
+    public function alumni()
+    {
+        $alumni = alumni::paginate(10);
+        return view('page.direktori-alumni', ['alumni' => $alumni]);
+    }
+        public function alumniPost(Request $req)
+    {
+        $id = $req->get('id');
+        if($id){
+            $alumni = alumni::find($id);
+        }else{
+            $alumni = new alumni;
+        }
+        if($req->gambar){
+        if($req->hasFile('gambar')){
+          $foto = $req->file('gambar');
+          $filename = time() . '.' . $foto->getClientOriginalExtension();
+          $destinationPath = 'image/';              
+            $foto->move($destinationPath, $filename);
+          }
+          $alumni->gambar = $filename;
+      }
+         $alumni->nama = $req->nama;
+         $alumni->kelamin = $req->kelamin;
+         $alumni->kegiatan = $req->kegiatan;
+         $alumni->tempat_kegiatan = $req->tempat_kegiatan;
+         $alumni->tempat_alamat_kegiatan = $req->tempat_alamat_kegiatan;
+         $alumni->tahun_lulus = $req->tahun_lulus;
+         $alumni->save();
+         return redirect()->back()->with('success', 'Data Berhasil Di Simpan');
+  }
+
+
+
+
+    public function silabus()
+    {
+          $surats = Surat::latest()->get();
+            return view('page.silabus', compact('surats'));
+    }
+
+    
     public function profileSekolah()
     {
-        return view('profile-sekolah');
-    }
+        $iden = iden::paginate(10);
+        return view('profile-sekolah', ['iden' => $iden]);
+      }
 
     public function sejarah()
     {
-        return view('page.sejarah-sekolah');
+        $sejarah = sejarah::paginate(10);
+        return view('page.sejarah-sekolah', ['sejarah' => $sejarah]);
+        
     }
 
     public function akreditasi()
@@ -79,13 +197,16 @@ class PageController extends Controller
 
     public function visiMisi()
     {
-        return view('page.visi-misi');
-    }
+
+        $visi = visi::paginate(10);
+        return view('page.visi-misi', ['visi' => $visi]);
+         }
 
     public function strukturOrganisasi()
     {
-        $strukturs = StrukturOrganisasi::latest()->get();
-        return view('page.struktur-organisasi', compact('strukturs'));
+        $strukturs = StrukturOrganisasi–m::paginate(10);
+        return view('page.struktur-organisasi', ['strukturs' => $strukturs]);
+       
     }
 
     public function nilaiOnline()

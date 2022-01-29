@@ -4,19 +4,86 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Image;
+use App\Models\identitas;
 use App\Models\Agenda;
 use App\Models\Berita;
+use App\Models\iden;
 use App\Models\instrakulikuler;
 use App\Models\esksrakulikuler;
 use App\Models\Eskul;
 use App\Models\Galeri;
 use App\Models\Pengumuman;
 use App\Models\Prestasi;
-use App\Models\Kegiatan;
+use App\Models\Surat;
+use App\Models\kontak;
+use App\Models\weblink;
+use App\Models\StrukturOrganisasi–m;
 class AdminController extends Controller
 {
-    //
-    
+
+      public function surat()
+          {
+            $surats = Surat::latest()->get();
+            return view('pegawai.silabus.index', compact('surats'));
+          }
+
+          public function suratAdd()
+          {
+            return view('pegawai.silabus.create');
+          }
+
+          public function suratEdit($id)
+          {
+            $surat = Surat::find($id);
+            return view('pegawai.silabus.edit', compact('surat'));
+          }
+
+          public function suratPost(Request $req)
+          {
+            $id = $req->get('id');
+            if($id){
+              $surat = Surat::find($id);
+            }else{
+              $surat = new Surat;
+            }
+            $surat->judul = $req->judul;
+            if($req->keterangan){
+              $surat->keterangan = $req->keterangan;
+            }
+
+            if($req->file){
+              $file = $req->file('file');
+
+              $destinationPath = 'files/surat';
+              $filename = $file->getClientOriginalName();
+              $upload_success = $req->file('file')->move($destinationPath, $filename);
+
+
+              $surat->file = $filename;
+            }
+
+            $surat->save();
+            return redirect()->route('pegawai.silabus.index')->with(['success' => 'Data Berhasil Disimpan!']);
+          }
+
+          public function suratDelete($id)
+          {
+            $surat = Surat::findOrFail($id);
+            $surat->delete();
+
+              if($surat){
+                  return response()->json([
+                      'status' => 'success'
+                  ]);
+              }else{
+                  return response()->json([
+                      'status' => 'error'
+                  ]);
+              }
+          }
+
+        //
+        
     // Kegiatan Intrakulikuler
     public function intrakulikuler()
     {
@@ -127,9 +194,10 @@ class AdminController extends Controller
 
   public function ekstrakulikulerDelete($id)
     {
-      $intrakulikuler = ekstrakulikuler::find($id);
-      $intrakulikuler->delete();
+      $ekstrakulikuler = esksrakulikuler::find($id);
+      $ekstrakulikuler->delete();
 
+      return redirect('/admin/ekstrakulikuler');
         if($ekstrakulikuler){
             return response()->json([
                 'status' => 'success'
@@ -140,57 +208,134 @@ class AdminController extends Controller
             ]);
         }
     }
-    // Struktur Organisasi Sekolah
-    public function strukturOrganisasi()
+
+    //indentitas
+    public function identitas()
     {
-      $strukturs = StrukturOrganisasi–m::latest()->get();
-      return view('struktur.index', compact('strukturs'));
+      $identitas = identitas::latest()->get();
+      return view('profil.identitas.index', compact('identitas'));
     }
 
-    public function strukturCreate()
+    public function indetitasCreate()
     {
-      return view('struktur.create');
+      return view('profil/identitas/create');
     }
 
-    public function strukturEdit(StrukturOrganisasi–m $struktur)
+    public function indetitasEdit(identitas $identitas)
     {
-      return view('struktur.edit', compact('struktur'));
+      return view('profil.identitas.edit', compact('identitas'));
     }
 
-    public function strukturPost(Request $req)
+    public function identitasPost(Request $req)
     {
-      $id = $req->get('id');
-      if($id){
-        $struktur = StrukturOrganisasi–m::find($id);
-      }else{
-        $struktur = new StrukturOrganisasi–m;
+      
+         $id = $req->get('id');
+          if($id){
+              $identitas = identitas::find($id);
+          }else{
+              $identitas = new identitas;
+          }
+          if($req->gambar){
+            if($req->hasFile('gambar')){
+              $foto = $req->file('gambar');
+              $filename = time() . '.' . $foto->getClientOriginalExtension();
+              $destinationPath = 'image/';              
+               $foto->move($destinationPath, $filename);
+              }
+              // $identitas->gambar = $filename;
+          }
+
+            $identitas->nama_sekolah = $req->nama_sekolah;
+            $identitas->npsn = $req->npsn;
+            $identitas->alamat = $req->alamat;
+            $identitas->desa = $req->desa;
+            $identitas->kecamatan = $req->kecamatan;
+            $identitas->kabupaten = $req->kabupaten;
+            $identitas->provisi = $req->provisi;
+            $identitas->telepon = $req->telepon;
+            $identitas->email = $req->email;
+            $identitas->sk_pendirians = $req->sk_pendirians;
+            $identitas->tangan_skp = $req->tangan_skp;
+            $identitas->sk_izin = $req->sk_izin;
+            $identitas->tanggal_sk_ijin = $req->tanggal_sk_ijin;
+            $identitas->akreditas = $req->akreditas;
+            $identitas->save();
+            return redirect()->route('profil.identitas.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            }
+
+    public function indetitasDelete($id)
+    {
+      $identitas = identitas::findOrFail($id);
+        $identitas->delete();
+
+        return redirect('/profil/identitas');
+          if($prestasi){
+              return response()->json([
+                  'status' => 'success'
+              ]);
+          }else{
+              return response()->json([
+                  'status' => 'error'
+              ]);
+          }
       }
-      $struktur->komite_sekolah = $req->komite_sekolah;
-      $struktur->kepala_sekolah = $req->kepala_sekolah;
-      $struktur->wk_sekolah = $req->wk_sekolah;
-      $struktur->kaur_tu_sekolah = $req->kaur_tu_sekolah;
-      $struktur->staff_kurikulum = $req->staff_kurikulum;
-      $struktur->staff_kesiswaan = $req->staff_kesiswaan;
-      $struktur->staff_humas = $req->staff_humas;
-      $struktur->save();
-      return redirect()->route('struktur.index')->with(['success' => 'Data Berhasil Disimpan!']);
-    }
 
-    public function strukturDelete($id)
-    {
-      $struktur = StrukturOrganisasi–m::findOrFail($id);
-      $struktur->delete();
 
-        if($struktur){
-            return response()->json([
-                'status' => 'success'
-            ]);
+    // Struktur Organisasi Sekolah
+     public function strukturOrganisasi()
+      {
+        $strukturs = StrukturOrganisasi–m::latest()->get();
+        return view('profil.struktur.index', compact('strukturs'));
+      }
+
+      public function strukturCreate()
+      {
+        return view('profil/struktur/create');
+      }
+
+      public function strukturEdit(StrukturOrganisasi–m $struktur)
+      {
+        return view('profil.struktur.edit', compact('struktur'));
+      }
+
+      public function strukturPost(Request $req)
+      {
+        $id = $req->get('id');
+        if($id){
+          $struktur = StrukturOrganisasi–m::find($id);
         }else{
-            return response()->json([
-                'status' => 'error'
-            ]);
+          $struktur = new StrukturOrganisasi–m;
         }
-    }
+           if($req->gambar){
+          if($req->hasFile('gambar')){
+            $foto = $req->file('gambar');
+            $filename = time() . '.' . $foto->getClientOriginalExtension();
+            $destinationPath = 'image/';              
+             $foto->move($destinationPath, $filename);
+            }
+            $struktur->gambar = $filename;
+        }
+
+        $struktur->judul = $req->judul;
+        $struktur->save();
+        return redirect()->route('profil.struktur.index')->with(['success' => 'Data Berhasil Disimpan!']);
+      }
+
+      public function strukturDelete($id)
+      {
+        $struktur = StrukturOrganisasi–m::findOrFail($id);
+        $struktur->delete();
+
+          if($struktur){
+              return response()->json([
+                  'status' => 'success'
+              ]);
+          }else{
+              return response()->json([
+                  'status' => 'error'
+              ]);
+          }
+      }
 
     
     // website profile sekolah
@@ -265,8 +410,8 @@ class AdminController extends Controller
 
     public function agendaEdit($id)
     {
-      $agenda = Agenda::find($id);
-      return view('admin.agenda.edit', compact('agenda'));
+      $agendas = Agenda::find($id);
+      return view('admin.agenda.edit', compact('agendas'));
     }
 
     public function agendaPost(Request $req)
@@ -475,6 +620,123 @@ class AdminController extends Controller
             ]);
         }
     }
+
+//kontak sekolah
+    public function kontak()
+    {
+        $kontak = kontak::all();
+        return view('kontak.kontak-sekolah.index', compact('kontak'));
+    }
+    public function kontakCreate()
+    {
+      return view('kontak/kontak-sekolah/create');
+    }
+    public function kontakDetail($id)
+    {
+      $kontak = kontak::find($id);
+      return view('kontak/kontak-sekolah/detail', compact('kontak'));
+    }
+    
+    public function kontakEdit($id)
+    {
+      $kontak = kontak::find($id);
+      return view('kontak.kontak-sekolah.edit', compact('kontak'));
+    }
+
+    public function kontakPost(Request $req)
+    {
+        $id = $req->get('id');
+        if($id)
+        {
+            $kontak = kontak::find($id);
+        }else
+        {
+            $kontak = new kontak;
+        }
+        $kontak->maps = $req->maps;
+        $kontak->telp = $req->telp;
+        $kontak->fax = $req->fax;
+        $kontak->email = $req->email;
+        $kontak->save();
+        return redirect()->route('kontak.kontak-sekolah.index')->with(['success' => 'Data Berhasil Di Simpan']);
+    }
+    public function kontakDel($id)
+  {
+    $kontak = kontak::find($id);
+    $kontak->delete();
+  
+    return redirect('/kontak/kontak-sekolah');
+
+      if($prestasi){
+          return response()->json([
+              'status' => 'success'
+          ]);
+      }else{
+          return response()->json([
+              'status' => 'error'
+          ]);
+      }
+  }
+
+      //weblink
+
+
+        public function weblink()
+        {
+            $weblink = weblink::all();
+            return view('kontak.weblink.index', compact('weblink'));
+        }
+        public function weblinkCreate()
+        {
+          return view('kontak/weblink/create');
+        }
+        public function weblinkDetail($id)
+        {
+          $weblink = weblink::find($id);
+          return view('kontak/weblink/detail', compact('weblink'));
+        }
+
+        public function weblinkEdit($id)
+        {
+          $weblink = weblink::find($id);
+          return view('kontak.weblink.edit', compact('weblink'));
+        }
+
+        public function weblinkPost(Request $req)
+        {
+            $id = $req->get('id');
+            if($id)
+            {
+                $weblink = weblink::find($id);
+            }else
+            {
+                $weblink = new weblink;
+            }
+            $weblink->fb = $req->fb;
+            $weblink->ig = $req->ig;
+            $weblink->yt = $req->yt;
+            $weblink->save();
+            return redirect()->route('kontak.weblink.index')->with(['success' => 'Data Berhasil Di Simpan']);
+        }
+        public function weblinkDel($id)
+        {
+        $weblink = weblink::find($id);
+        $weblink->delete();
+
+        return redirect('/kontak/weblink');
+
+          if($weblink){
+              return response()->json([
+                  'status' => 'success'
+              ]);
+          }else{
+              return response()->json([
+                  'status' => 'error'
+              ]);
+          }
+        }
+
+
 
 
       //pengumuman

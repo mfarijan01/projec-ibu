@@ -46,9 +46,9 @@
                                         <a href="{{route('admin.ekstrakulikuler.edit', $ekstrakulikuler->id)}}" class="btn btn-sm btn-primary">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
-                                        <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $ekstrakulikuler->id }}">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
+                                        <a href="/admin/ekstrakulikuler/index/delete/{{ $ekstrakulikuler->id }}" class="btn btn-sm btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
                                     </td>
                                 </tr>
                             @endforeach

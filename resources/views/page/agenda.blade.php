@@ -1,6 +1,6 @@
 @extends('layouts.page.app')
 
-@section('title', 'agenda')
+@section('title', 'Agenda')
 
 @section('header')
 <header class="pt-3 border-bottom">
@@ -19,16 +19,21 @@
 </nav>
 @stop
 
-section('content')
+@section('content')
     <div class="row mt-5">
         @foreach($agendas as $agenda)
-                <div class="card-body">
-                    <h6>{{$k->judul}}</h6>
-                    <td>{{ $agenda->lokasi}}</td>
-                    <p class="mb-0">{{$k->tanggal}}</p>
+        <div class="col-lg-4 col-12 mt-5">
+        <a href="#" data-toggle="modal" data-target="#modal{{$agenda->id}}" class="text-decoration-none text-dark">
+            <div class="card shadow" style="">
+                <div class="card-body" style="">
+                    <h6 class="font-weight-bold"><i class="fas fa-bullhorn"></i> {{$agenda->judul}}</h6>
+                    <p class="mt-0 mb-0" style="font-size: 12px;">{{ $agenda->lokasi}}</p>
+                    <p class="mt-0 mb-0" style="font-size: 12px;">{{ $agenda->tanggal}}</p>
                 </div>
             </div>
-        </div>
+        </a>
+    </div>
+
         @endforeach
     </div>
-@stop 
+    @stop 

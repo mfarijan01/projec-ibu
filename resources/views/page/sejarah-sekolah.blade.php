@@ -20,13 +20,18 @@
 @stop
 
 @section('content')
-<center>
-    <img src="/image/logo/logo.png" alt="" class="img img-thumbnail border-0" width="250">
-</center>
-<br>
-<p>
-    Pada tahun 1959 SMP PGRI Ciranjang bergabung disatu bangunan dengan SDN Cipeuyeum 1 . 
-    Kemudian berpindah dan mendirikan bangunan sendiri pada juli 1984 diatas tanah desa. Saat itu SMP PGRI Ciranjang di Pimpin Oleh Bapak Hj Oyo Sutisna, jumlah kelas Masih 2 Rombel. Seiring berjalannya waktu bapak Hj. Oyo Sutisna pensiun dan digantikan Oleh Bapak H. Enay Sunarya, M.Pd. Pada Tahun 2000 Kepala SMP PGRI Ciranjang oleh Bapak Enay Sunarya, M.Pd. Jumlah Rombel semakin bertambah menjadi 6 Rombel dan meningkat Hingga 15 Rombel. 
-    dan Bangunannya pun dari 1 lantai berubah menjadi 2 lantai.
-</p>
+@foreach($sejarah as $sejarah)
+<div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h5 class="text-center">{{$sejarah->judul}}</h5>
+                    <center>
+                        <img src="{{ asset('/image/'.$sejarah->gambar)}}" alt="" class="img img-thumbnail border-0 rounded-lg" width="300">
+                    </center>
+                    <p>{!! $sejarah->isi !!}</p>
+                </div>
+            </div>
+        </div>
+@endforeach
 @stop

@@ -20,7 +20,7 @@
 @stop
 
 @section('content')
-
+@foreach($iden as $iden)
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -34,29 +34,17 @@
                                 <tr style="font-size: 14px;">
                                     <td>Nama Sekolah</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>SMP PGRI CIRANJANG</td>
+                                    <td>{{ $iden->nama_sekolah}}</td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                 </tr>
-
-                                <tr style="font-size: 14px;">
-                                    <td> KEPALA SEKOLAH</td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td> Drs. H. Enay Sunarya</td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-
                                 <tr style="font-size: 14px;">
                                     <td>NPSN</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>20252335</td>
+                                    <td>{{ $iden->npsn}}</td>
                                 </tr>
 
                                 <tr>
@@ -68,7 +56,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Alamat</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>Jl. Raya Sipon</td>
+                                    <td>{{ $iden->alamat}}</td>
                                 </tr>
 
                                 <tr>
@@ -80,7 +68,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Desa</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>Sindangjaya</td>
+                                    <td>{{ $iden->desa}}</td>
                                 </tr>
 
                                 <tr>
@@ -92,7 +80,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Kecamatan</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>Ciranjang</td>
+                                    <td>{{ $iden->kecamatan}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -104,7 +92,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Kabupaten</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>Cianjur</td>
+                                    <td>{{ $iden->kabupaten}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -116,7 +104,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Provinsi</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>Jawa Barat</td>
+                                    <td>{{ $iden->provisi }}</td>
                                 </tr>
                                 
                                 <tr>
@@ -128,7 +116,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Telepon</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>0877-0102-6553</td>
+                                    <td>{{ $iden->telepon}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -140,7 +128,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Email Sekolah</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>smppgriciranjang@gmail.com</td>
+                                    <td>{{ $iden->email}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -152,7 +140,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>SK Pendirian Sekolah</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>84/YP/PGRI/V/Kpt/77</td>
+                                    <td>{{ $iden->sk_pendirians}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -164,7 +152,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Tanggal SK Pendirian </td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>13-03-1977</td>
+                                    <td>{{ $iden->tangan_skp}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -176,7 +164,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>SK Izin Operasional</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>340186-958058-444113-132028589-1026748810</td>
+                                    <td>{{ $iden->sk_izin}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -188,7 +176,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Tanggal SK Izin Operasional</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>13-03-1977</td>
+                                    <td>{{ $iden->tanggal_sk_ijin}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -200,7 +188,7 @@
                                 <tr style="font-size: 14px;">
                                     <td>Akreditas</td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td>A</td>
+                                    <td>{{ $iden->akreditas}}</td>
                                 </tr>
                                 
                                 <tr>
@@ -217,7 +205,7 @@
         <div class="col-md-6">
             <div class="card shadow mt-4">
                 <div class="card-body">
-                    <img src="/image/logo/logo.png" alt="" class="img img-thumbnail border-0">
+                    <img src="{{ asset('/image/'.$iden->gambar)}}" alt="" class="img img-thumbnail border-0">
                 </div>
             </div>
         </div>
@@ -225,6 +213,5 @@
 </div>
 
         
-    
-    
+@endforeach
 @stop

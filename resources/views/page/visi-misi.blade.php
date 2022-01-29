@@ -29,23 +29,12 @@
             "Pendidikan bukan cuma pergi ke sekolah dan mendapatkan gelar. Tapi juga memperluas pengetahuan dan menyerap ilmu kehidupan."
         </p>
     </div>
-    <div class="col-md-6 col-12">
-        <h5 class="mt-4 font-weight-bold text-center" style="color: #0099ff;">
-            Visi
-        </h5>
-        <p class="text-center">
-            Unggul, Santun, Bersih Dan Berahlaq.
-        </p>
-    </div>
-    <div class="col-md-12 col-12">
-        <h5 class="mt-4 font-weight-bold" style="color: #0099ff;">
-            Misi
-        </h5>
-        <p>
-            "Disiplin Dalam Kerja, Mewujudkan Keluarga, Handal, Evaluatif Dengan Meningkatkan Silaturahmi."
-        </p>
-        <img src="/image/logo/logo.png" alt="" class="img img-thumbnail border-0" width="250">
-    </div>
 </div>
+@foreach($visi as $visi)
+<h5 class="mt-4 font-weight-bold" style="color: #0099ff; text-center">{{$visi->visi_misi}}</h5>
+                
+                    <p>{!! $visi->isi !!}</p>
+            
+@endforeach
 
 @stop

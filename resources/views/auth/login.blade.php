@@ -22,7 +22,7 @@
             justify-content: center;
             /* background-color: #10a5f5;
             background-image: linear-gradient(19deg, #10a5f5 0%, #0099ff 100%); */
-            background: url('/image/logo/smp.jpg'), #2f8eed;
+            background: url('/image/logo/smp1.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;

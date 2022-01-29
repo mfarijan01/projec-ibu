@@ -20,19 +20,15 @@
 @stop
 
 @section('content')
-    <center>
-        <img src="/image/logo/logo.png" alt="" class="img img-thumbnail border-0" width="250">
-    </center>
+    
     
     @foreach ($strukturs as $struktur)
-        <ul class="list-group list-group-flush mt-4 text-center">
-            <li class="list-group-item">Komite Sekolah : {{$struktur->komite_sekolah}}</li>
-            <li class="list-group-item">Kepala Sekolah : {{$struktur->kepala_sekolah}}</li>
-            <li class="list-group-item">Wakil Kepala Sekolah : {{$struktur->wk_sekolah}}</li>
-            <li class="list-group-item">Kaur Tata Usaha : {{$struktur->kaur_tu_sekolah}}</li>
-            <li class="list-group-item">Staff Kurikulum : {{$struktur->staff_kurikulum}}</li>
-            <li class="list-group-item">Staff Kesiswaan : {{$struktur->staff_kesiswaan}}</li>
-            <li class="list-group-item">Staff Humas : {{$struktur->staff_humas}}</li>
-        </ul>    
+      <br>
+           
+                 
+              <center>
+              <h2>{{$struktur->judul}}</h2><br>
+        <img src="{{ asset('/image/'.$struktur->gambar)}}" alt="" class="img img-thumbnail border-0" width="600px">
+    </center>
     @endforeach
 @stop

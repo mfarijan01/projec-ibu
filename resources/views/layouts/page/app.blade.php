@@ -22,19 +22,162 @@
     
 </style>
 <body style="background:#fff;">
-    
-
-        <nav class="navbar navbar-expand-md  navbar-dark" style="background: #0099ff;">
-            <div class="container">
-                <!-- Brand -->
-                <a class="navbar-brand" href="#" style="font-size: 16px;font-weight:bold;">SMP PGRI CIRANJANG</a>
-
-               
+<div class="bg-primary text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-11">
+                    <marquee behavior="" direction="left">
+                        Selamat Datang Di Website SMP PGRI CIRANJANG, Dapatkan Informasi Terkait SMP PGRI CIRANJANG
+                        Disini . . .
+                    </marquee>
+                </div>
+                <div class="col-md-1">
+                    <a class="nav-link text-white mr-2 fontMobile font14" href="{{route('login')}}"><i
+                            class="fas fa-sign-in-alt"></i> Login</a>
+                </div>
             </div>
-            
-        </nav>
+        </div>
+    </div>
+    <br>
+    <div class="container pt-md-1 pb-md-1">
+            <ul class="navbar-nav">
+                <div class="row">
+
+                    <li class="nav-item">
+                        <img src="/image/logo/logo.png" alt="" class="img img-thumbnail" width="80"
+                            style="border:none;background:transparent;">&emsp;
+                    </li>
+                    <li class="navbar-nav">
+                        <h5 class="bd-title mt-4 mb-0 font-weight-bold" style="color:#10A5F5;">SMP PGRI CIRANJANG</h5>
+                        <p class="mt-0 font-size-sm">Unggul, Santun, Bersih Dan Berakhlaq</p>
+                    </li>
+
+                </div>
+            </ul>
+
+        </div><br>
+
+<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background:#10A5F5;border:5px #10A5F5;">
+        <div class="container-fluid">
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" style="background-color:#2980b9;" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <i class="fa fa-bars" style="color:#fff;"></i>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="width:100%;">
+                <ul class="navbar-nav text-white">
+                    <li class="nav-item ">
+                        <a class="nav-link font14 text-white" id="klik" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            PROFIL
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('sambutan-kepala-sekolah')}}">Sambutan Kepala
+                                Sekolah</a>
+                            <a class="dropdown-item font14" href="{{route('sejarah')}}">Sejarah</a>
+                            <a class="dropdown-item font14" href="{{route('struktur-organisasi')}}">Struktur Organisasi</a>
+                            <!-- <a class="dropdown-item font14" href="{{route('akreditasi')}}">Akreditasi</a> -->
+                            <a class="dropdown-item font14" href="{{route('visi-misi')}}">Visi, Misi Dan Tujuan</a>
+                            <a class="dropdown-item font14" href="{{route('profile-sekolah')}}">Profile Sekolah</a>
+                            <!-- <a class="dropdown-item font14" href="{{route('galeri')}}">Fasilitas</a> -->
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            GURU
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('direktori-guru')}}">Direktori Guru</a>
+                            <a class="dropdown-item font14" href="{{route('silabus')}}">Silabus</a>
+                            <!-- <a class="dropdown-item font14" href="#">Materi Ajar</a>
+                            <a class="dropdown-item font14" href="#">Materi Ujian</a> -->
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            SISWA
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('direktori-siswa')}}">Direktori Siswa</a>
+                            <a class="dropdown-item font14" href="{{route('prestasi')}}">Prestasi Siswa</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            ALUMNI
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('direktori-alumni')}}">Direktori Alumni</a>
+                         </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            GALERI
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('galeri')}}">Galeri</a>
+                            <a class="dropdown-item font14" href="{{route('vidio')}}">Vidio</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            KEGIATAN
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('intrakulikuler')}}">Intrakulikuler</a>
+                            <a class="dropdown-item font14" href="{{route('ekstrakulikuler')}}">Ekstrakulikuler</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            INFORMASI
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('berita')}}">Berita</a>
+                            <a class="dropdown-item font14" href="{{route('agenda')}}">Agenda</a>
+                            <a class="dropdown-item font14" href="{{route('pengumuman')}}">Pengumuman</a>
+                            <!-- <a class="dropdown-item font14" href="">Inpo Weblink</a> -->
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle font14 text-white" href="" id="navbardrop"
+                            data-toggle="dropdown">
+                            FITUR LAINNYA
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item font14" href="{{route('kemitraan')}}">Kemitraan</a>
+                            <a class="dropdown-item font14" href="{{route('program-kerja')}}">Program Kerja</a>
+                            <a class="dropdown-item font14" href="{{route('komite-sekolah')}}">Komite Sekolah</a>
+                            <!-- <a class="dropdown-item font14" href="">Inpo Weblink</a> -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <br>
+        
+   
 
         @yield('header')
+        
 
     <div class="container mb-5">
         @yield('content')

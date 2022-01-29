@@ -25,7 +25,7 @@
         <div class="col-lg-4 mb-3">
             <div class="card shadow">
                 <a href="/image/{{$k->image}}" target="__blank">
-                    <img src="/image/{{$k->image}}" alt="" class="card-img-top" style="height:250px;">
+                    <img src="{{ asset('/image/'.$k->image)}}" alt="" class="card-img-top" style="height:250px;">
                 </a>
                 <div class="card-body">
                     <h6>{{$k->title}}</h6>
