@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="row">
                             @if(count($strukturs) == 0)
-                                <a href="{{route('admin.struktur.create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Data</a>&nbsp;
+                                <a href="{{route('admin.struktur.create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Data</a>&nbsp;
                             @endif
                         </div>
                     </div>

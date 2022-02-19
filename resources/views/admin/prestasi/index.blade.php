@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <div class="container">
                         <div class="row">
-                            <a href="{{route('admin/prestasi/create')}}" class="btn btn-primary mb-4"><i
+                            <a href="{{route('admin/prestasi/create')}}" class="btn btn-success mb-4"><i
                                     class="fas fa-plus-circle"></i> Tambah Prestasi</a>&nbsp;
                         </div>
                     </div>

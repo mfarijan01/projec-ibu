@@ -18,7 +18,7 @@
                     <h4><i class="fas fa-envelope"></i> silabus</h4>
                 </div>
                 <div class="card-body">
-                    <a href="{{route('pegawai.silabus.create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Surat</a>
+                    <a href="{{route('pegawai.silabus.create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Surat</a>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="format">
                             <thead>

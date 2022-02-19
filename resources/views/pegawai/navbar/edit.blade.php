@@ -18,7 +18,10 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-image"></i> Edit tampilan depan sekolah</h4>
+                        <h4><i class="fas fa-image"></i> Edit tampilan depan sekolah</h4><br>
+                        <i class="alert alert-secondary" role="alert">
+                            Edit Harus Satu Satu !!!
+                        </i>
                     </div>
 
                     <div class="card-body">

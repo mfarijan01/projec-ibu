@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class="container">
                         <div class="row">
-                            <a href="{{route('admin/ekstrakulikuler/add')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Ekstrakulikuler</a>&nbsp;
+                            <a href="{{route('admin/ekstrakulikuler/add')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Ekstrakulikuler</a>&nbsp;
                         </div>
                     </div>
                     <div class="table-responsive">

@@ -20,7 +20,7 @@
                 <div class="card-body">
                 <div class="container">
                         <div class="row">
-                            <a href="{{route('siswa/data-siswa/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Data siswa</a>&nbsp;
+                            <a href="{{route('siswa/data-siswa/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Data siswa</a>&nbsp;
                         </div>
                     </div>
                     <div class="table-responsive">

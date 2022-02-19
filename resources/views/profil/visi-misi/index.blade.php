@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="row">
                         @if(count($visi) == 0)
-                            <a href="{{route('profil/visi-misi/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Visi Misi</a>&nbsp;
+                            <a href="{{route('profil/visi-misi/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Visi Misi</a>&nbsp;
                             @endif  </div>
                     </div>
                     <div class="table-responsive">

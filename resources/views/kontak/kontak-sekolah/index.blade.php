@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="row">
                         @if(count($kontak) == 0)
-                            <a href="{{route('kontak/kontak-sekolah/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Kontak</a>&nbsp;
+                            <a href="{{route('kontak/kontak-sekolah/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Kontak</a>&nbsp;
                             @endif
                         </div>
                     </div>

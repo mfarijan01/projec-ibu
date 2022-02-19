@@ -20,9 +20,7 @@
             background-color: white;
             align-items: center;
             justify-content: center;
-            /* background-color: #10a5f5;
-            background-image: linear-gradient(19deg, #10a5f5 0%, #0099ff 100%); */
-            background: url('/image/logo/smp1.png');
+            background: url('/image/logo/logo1.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -133,7 +131,7 @@
     <div class="box">
 		<form class="login-form" action="{{route('login')}}" method="POST">
             <center>
-                <img src="{{asset('image/logo/logo.png')}}" alt="" class="img img-thumbnail border-0" width="200">
+                <img src="{{asset('image/logo/logo1.png')}}" alt="" class="img img-thumbnail border-0" width="200">
             </center>
         
 			<h1 class="font-login"> Login</h1>
@@ -150,8 +148,8 @@
                         {{ $message }}
                     </div>
                 @enderror
-                <button type="submit">Login</button>
-                <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" href="/">Lupa Password?</a></span>
+                <button  type="submit">Login</button>
+                <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" href="/">Kembali ke Situs</a></span>
 		</form>
 		
 	</div>

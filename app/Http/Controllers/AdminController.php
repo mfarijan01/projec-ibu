@@ -323,19 +323,12 @@ class AdminController extends Controller
 
       public function strukturDelete($id)
       {
-        $struktur = StrukturOrganisasi–m::findOrFail($id);
-        $struktur->delete();
-
-          if($struktur){
-              return response()->json([
-                  'status' => 'success'
-              ]);
-          }else{
-              return response()->json([
-                  'status' => 'error'
-              ]);
-          }
+          $struktur = StrukturOrganisasi–m::findOrFail($id);
+          $struktur->delete();
+  
+          return redirect('/profil/struktur-organisasi');
       }
+      
 
     
     // website profile sekolah
@@ -735,6 +728,53 @@ class AdminController extends Controller
               ]);
           }
         }
+
+        // Akun
+        
+      public function akunSiswa()
+      {
+        $akuns = User::latest()->where('level', 'siswa')->get();
+        return view('akun.siswa.index', compact('akuns'));
+      }
+
+      public function akunSiswaAdd()
+      {
+        return view('akun/siswa/create');
+      }
+
+      public function akunSiswaEdit($id)
+      {
+        $akun = User::find($id);
+        return view('akun.siswa.edit', compact('akun'));
+      }
+
+
+      public function akunSiswaPost(Request $req)
+      {
+        $id = $req->get('id');
+        if($id){
+          $akun = User::find($id);
+        }else{
+          $akun = new User;
+        }
+        $akun->name = $req->name;
+        $akun->email = $req->email;
+        $akun->username = $req->username;
+        $akun->password = bcrypt($req->password);
+        $akun->level = $req->level;
+        $akun->status = 'aktif';
+        $akun->save();
+
+
+        return redirect()->route('akun.siswa.index')->with(['success' => 'Data Berhasil Disimpan!']);
+      }
+
+      public function akunSiswaDelete($id) {
+        $akun = User::find($id);
+        $akun->delete();
+
+        return redirect('/akun/siswa');
+      }
 
 
 

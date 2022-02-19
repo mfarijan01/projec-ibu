@@ -20,7 +20,7 @@
                 <div class="card-body">
                 <div class="row">
                             @if(count($sambutan) == 0)
-                                <a href="{{route('profil/kepala-sekolah/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Sambutan Kepala Sekolah</a>&nbsp;
+                                <a href="{{route('profil/kepala-sekolah/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Sambutan Kepala Sekolah</a>&nbsp;
                             @endif
                         </div>
                     </div>

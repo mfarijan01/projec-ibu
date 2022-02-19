@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="row">
         
-                            <a href="{{route('kontak/weblink/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah weblink</a>&nbsp;
+                            <a href="{{route('kontak/weblink/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah weblink</a>&nbsp;
                            
                         </div>
                     </div>

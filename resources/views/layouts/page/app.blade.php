@@ -21,43 +21,8 @@
     }
     
 </style>
-<body style="background:#fff;">
-<div class="bg-primary text-white">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-11">
-                    <marquee behavior="" direction="left">
-                        Selamat Datang Di Website SMP PGRI CIRANJANG, Dapatkan Informasi Terkait SMP PGRI CIRANJANG
-                        Disini . . .
-                    </marquee>
-                </div>
-                <div class="col-md-1">
-                    <a class="nav-link text-white mr-2 fontMobile font14" href="{{route('login')}}"><i
-                            class="fas fa-sign-in-alt"></i> Login</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="container pt-md-1 pb-md-1">
-            <ul class="navbar-nav">
-                <div class="row">
 
-                    <li class="nav-item">
-                        <img src="/image/logo/logo.png" alt="" class="img img-thumbnail" width="80"
-                            style="border:none;background:transparent;">&emsp;
-                    </li>
-                    <li class="navbar-nav">
-                        <h5 class="bd-title mt-4 mb-0 font-weight-bold" style="color:#10A5F5;">SMP PGRI CIRANJANG</h5>
-                        <p class="mt-0 font-size-sm">Unggul, Santun, Bersih Dan Berakhlaq</p>
-                    </li>
-
-                </div>
-            </ul>
-
-        </div><br>
-
-<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background:#10A5F5;border:5px #10A5F5;">
+<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background:#058532;border:5px #10A5F5;">
         <div class="container-fluid">
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" style="background-color:#2980b9;" type="button" data-toggle="collapse"

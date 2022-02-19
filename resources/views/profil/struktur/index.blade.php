@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class="container">
                         <div class="row">
-                            <a href="{{route('profil/struktur/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Apload  Struktur Organisasi</a>&nbsp;
+                            <a href="{{route('profil/struktur/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Apload  Struktur Organisasi</a>&nbsp;
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -46,7 +46,7 @@
                                         <a href="{{ route('profil.struktur.edit', $struktur->id) }}" class="btn btn-sm btn-primary">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
-                                        <a href="/profil/struktur/index/delete/{{ $struktur->id }}" class="btn btn-sm btn-danger">
+                                        <a href="/profil/struktur-organisasi/index/delete/{{ $struktur->id }}" class="btn btn-sm btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                     </td>

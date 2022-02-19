@@ -3,8 +3,8 @@
 
 <head>
    
-    <link rel="icon" href="http://localhost/project_smp/public/seer/default.png">
-    <title>SMP PGRI CIRANJANG</title>
+    <link rel="icon" href="{{asset('image/logo/logo1.png')}}">
+    <title>SMK PLUS INSAN ANDALAN CIANJUR</title>
     <link href="{{ asset('templet/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('templet/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('templet/css/ruang-admin.min.css')}}" rel="stylesheet">
@@ -49,9 +49,9 @@
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon">
-                    <img class="rounded-circle" src="{{ asset('/seer/kp.jpg') }}">
+                    <img class="rounded-circle" src="{{asset('image/logo/logo1.png')}}">
                 </div>
-                <div class="sidebar-brand-text mx-3">Farijan</div>
+                <div class="sidebar-brand-text mx-3">Operator</div>
             </a>
 
             <hr class="sidebar-divider">
@@ -60,7 +60,7 @@
             </div>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/home">
-                    <i class="fas fa-tachometer-alt fa-2x text-primary" aria-hidden="true"></i>
+                    <i class="fas fa-tachometer-alt fa-2x text-success" aria-hidden="true"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -68,7 +68,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                     aria-expanded="true" aria-controls="collapseBootstrap">
-                    <i class="fas fa-building fa-2x text-primary"></i>
+                    <i class="fas fa-building fa-2x text-success"></i>
                     <span> Profil</span>
                 </a>
                 <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap"
@@ -96,7 +96,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                     aria-expanded="true" aria-controls="collapseBootstrap">
-                    <i class="fas fa-user-graduate fa-2x text-primary"></i>
+                    <i class="fas fa-user-graduate fa-2x text-success"></i>
                     <span> Data Pegawai</span>
                 </a>
                 <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap"
@@ -114,7 +114,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                     aria-expanded="true" aria-controls="collapseBootstrap">
-                    <i class="fas fa-users fa-2x text-primary"></i>
+                    <i class="fas fa-users fa-2x text-success"></i>
                     <span> Data Siswa</span>
                 </a>
                 <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap"
@@ -130,7 +130,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                     aria-expanded="true" aria-controls="collapseBootstrap">
-                    <i class="fas fa-calendar fa-2x text-primary"></i>
+                    <i class="fas fa-calendar fa-2x text-success"></i>
                     <span>Data Alumi </span>
                 </a>
                 <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap"
@@ -143,22 +143,22 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/admin/galeri">
-                    <i class="fas fa-landmark fa-2x text-primary" aria-hidden="true"></i>
+                    <i class="fas fa-landmark fa-2x text-success" aria-hidden="true"></i>
                     <span>Galeri</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{route('profil.vidio.index')}}">
-                    <i class="fas fa-video fa-2x text-primary" aria-hidden="true"></i>
+                    <i class="fas fa-video fa-2x text-success" aria-hidden="true"></i>
                     <span>Vidio</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="{{route('pegawai.buku-tamu.index')}}">
-                    <i class="fas fa-book fa-2x text-primary" aria-hidden="true"></i>
+                    <i class="fas fa-book fa-2x text-success" aria-hidden="true"></i>
                     <span>Buku tamu</span>
                 </a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="{{route('kontak.kontak-sekolah.index')}}">
                     <i class="fas fa-file-contract fa-2x text-primary" aria-hidden="true"></i>
@@ -168,7 +168,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                     aria-expanded="true" aria-controls="collapseBootstrap">
-                    <i class="fas fa-th-list fa-2x text-primary"></i>
+                    <i class="fas fa-th-list fa-2x text-success"></i>
                     <span>Fitur Pelengkap </span>
                 </a>
                 <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap"
@@ -240,7 +240,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @if(Auth::user()->foto == '')
-                                <img class="img-profile rounded-circle" src="{{ asset('/seer/logo.jpg')}}"
+                                <img class="img-profile rounded-circle" src="{{asset('image/logo/logo1.png')}}"
                                     style="max-width: 60px">
                                 @else
                                 <img class="img-profile rounded-circle"
@@ -284,7 +284,7 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabelLogout">farijan</h5>
+                                    <h5 class="modal-title" id="exampleModalLabelLogout">SMK PLUS INSAN ANDALAN CIANJUR</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -316,7 +316,7 @@
             <footer class="sticky-footer bg-primary">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto text-white">
-                        <span>SMP PGRI Ciranjang &copy; <script>
+                        <span>SMK PLUS INSAN ANDALAN CIANJUR &copy; <script>
                                 document.write(new Date().getFullYear());
 
                             </script> -

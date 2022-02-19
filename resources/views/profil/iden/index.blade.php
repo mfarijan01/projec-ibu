@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class="container">
                     @if(count($iden) == 0)
-                                <a href="{{route('profil/iden/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Identitas</a>&nbsp;
+                                <a href="{{route('profil/iden/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Identitas</a>&nbsp;
                             @endif
                     </div>
                     <div class="table-responsive">

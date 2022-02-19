@@ -40,6 +40,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
+//Akun Websate
+
+Route::get('/akun/websate',[App\Http\Controllers\AdminController::class,'websateSiswa'])->name('akun.websate.index');
+Route::get('/akun/websate/create',  [App\Http\Controllers\AdminController::class,'websateAdd'])->name('akun/websate/create');    
+Route::get('/akun/websate/edit/{id}',  [App\Http\Controllers\AdminController::class,'websateEdit'])->name('akun.websate.edit');
+Route::post('/akun/websate/post',  [App\Http\Controllers\AdminController::class,'websatePost'])->name('akun.websate.post');
+Route::get('/akun/websate/index/delete/{id}',  [App\Http\Controllers\AdminController::class,'websateDelete']);
+
 
 
 //halaman welcome
@@ -187,7 +195,7 @@ Route::get('/profil/struktur-organisasi',[App\Http\Controllers\AdminController::
 Route::get('/profil/struktur-organisasi/create',[App\Http\Controllers\AdminController::class,'strukturCreate'])->name('profil/struktur/create');
 Route::get('/profil/struktur-organisasi/edit/{struktur}',[App\Http\Controllers\AdminController::class,'strukturEdit'])->name('profil.struktur.edit');
 Route::post('/profil/struktur-organisasi/post',[App\Http\Controllers\AdminController::class,'strukturPost'])->name('profil.struktur.post');
-Route::delete('/profil/struktur-organisasi/delete/{id}',[App\Http\Controllers\AdminController::class,'strukturDelete'])->name('profil.struktur.delete');
+Route::get('/profil/struktur-organisasi/index/delete/{id}',[App\Http\Controllers\AdminController::class,'strukturDelete']);
 
  // Sarana prasarana
  Route::get('/profil/sarana-prasarana',[App\Http\Controllers\profilController::class,'sarana'])->name('profil.sarana-prasarana.index');

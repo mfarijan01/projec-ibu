@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="row">
                         @if(count($logo) == 0)
-                            <a href="{{route('pegawai/logo/create')}}" class="btn btn-primary mb-4"><i class="fas fa-plus-circle"></i> Tambah Logo</a>&nbsp;
+                            <a href="{{route('pegawai/logo/create')}}" class="btn btn-success mb-4"><i class="fas fa-plus-circle"></i> Tambah Logo</a>&nbsp;
                             @endif
                         </div>
                     </div>

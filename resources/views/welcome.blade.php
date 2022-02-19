@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
-    <title>SMP PGRI CIRANJANG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="icon" href="{{asset('image/logo/logo1.png')}}">   
+    <title>SMK PLUS INSAN ANDALAN CIANJUR</title>
    
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -141,38 +142,39 @@
 
 </style>
 
+
 <body>
-    <div class="bg-primary text-white">
+    <div class="bg-success text-white">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-11">
-                    <marquee behavior="" direction="left">
-                        Selamat Datang Di Website SMP PGRI CIRANJANG, Dapatkan Informasi Terkait SMP PGRI CIRANJANG
+                    <marquee class="bg-success text-white">
+                        Selamat Datang Di Website SMK PLUS INSAN ANDALAN CIANJUR, Dapatkan Informasi Terkait SMK PLUS INSAN ANDALAN CIANJUR
                         Disini . . .
                     </marquee>
                 </div>
                 <div class="col-md-1">
-                    <a class="nav-link text-white mr-2 fontMobile font14" href="{{route('login')}}"><i
-                            class="fas fa-sign-in-alt"></i> Login</a>
+                   <a class="nav-link text-white mr-2 fontMobile font14">
+                        <i class="kotak"></i> <span id="jam"></span> :
+                                    <span id="menit"></span> :
+                                    <span id="detik"></span> </a>
                 </div>
             </div>
         </div>
     </div>
-
-
-            
+        
  @foreach($logo as $logo)
     <header class="pt-3 border-bottom">
-        <div class="container pt-md-1 pb-md-1">
+        <div class="container">
             <ul class="navbar-nav">
                 <div class="row">
 
                     <li class="nav-item">
-                        <img src="{{ asset('/image/'.$logo->logo)}}" alt="" class="img img-thumbnail" width="80"
+                        <img src="{{ asset('/image/'.$logo->logo)}}" alt="" class="img img-thumbnail" width="140"
                             style="border:none;background:transparent;">&emsp;
                     </li>
                     <li class="navbar-nav">
-                        <h5 class="bd-title mt-4 mb-0 font-weight-bold" style="color:#10A5F5;">{{ $logo->nama}}</h5>
+                        <h5 class="bd-title mt-4 mb-0 font-weight-bold" style="color:#058532;">{{ $logo->nama}}</h5>
                         <p class="mt-0 font-size-sm">{{ $logo->isi }}</p>
                     </li>
                 </div>
@@ -181,10 +183,10 @@
     </header>
     @endforeach
     <!-- Navbar Menu -->
-    `<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background:#10A5F5;border:5px #10A5F5;">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background:#058532;border:5px #10A5F5;">
         <div class="container-fluid">
             <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" style="background-color:#2980b9;" type="button" data-toggle="collapse"
+            <button class="navbar-toggler" style="background-color:#058532;" type="button" data-toggle="collapse"
                 data-target="#collapsibleNavbar">
                 <i class="fa fa-bars" style="color:#fff;"></i>
             </button>
@@ -290,12 +292,16 @@
                             <a class="dropdown-item font14" href="{{route('komite-sekolah')}}">Komite Sekolah</a>
                             <!-- <a class="dropdown-item font14" href="">Inpo Weblink</a> -->
                         </div>
+                        <li class="nav-item ">
+                        <a class="nav-link text-white mr-2 fontMobile font14" href="{{route('login')}}"><i
+                            class="fas fa-sign-in-alt"></i> Login</a>
+                    </li>
                     </li>
                 </ul>
             </div>
         </div>
 
-    </nav>`
+    </nav>
     <!-- End Navbar Menu -->
 
     @foreach($navbar as $navbar)
@@ -312,7 +318,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
           
-                <img src="{{ asset('/image/'.$navbar->gambar1)}}" alt="" width="1100" height="550">
+                <img src="{{ asset('/image/'.$navbar->gambar1)}}" alt="" width="100" height="550">
             </div>
             <div class="carousel-item">
                 <img src= "{{ asset('/image/'.$navbar->gambar2)}}" alt="" width="1100" height="550">
@@ -346,7 +352,7 @@
 
                     <!-- berita section -->
                     <div class="col-md-12 mb-3" id="berita">
-                        <h4 class="font18" style="color:#10A5F5;"><i class="fas fa-clipboard-list"></i> BERITA TERBARU
+                        <h4 class="font18" style="color:#058532;"><i class="fas fa-clipboard-list"></i> BERITA TERBARU
                         </h4>
                     </div>
 
@@ -376,7 +382,7 @@
                     </div>
                     <div class="col-md-12">
                         <a href="{{route('berita')}}" class="font-weight-bold text-decoration-none font14 mb-3"
-                            style="color: #10A5F5;">Lihat Lebih Banyak</a>
+                            style="color: #058532;">Lihat Lebih Banyak</a>
                     </div>
 
                     <!-- end berita section -->
@@ -384,7 +390,7 @@
 
                     <!-- fasilitas section -->
                     <div class="col-md-12 mb-3 mt-4" id="fasilitas">
-                        <h4 class="font18" style="color:#10A5F5;"><i class="fas fa-images"></i> FASILITAS SEKOLAH</h4>
+                        <h4 class="font18" style="color:#058532;"><i class="fas fa-images"></i> FASILITAS SEKOLAH</h4>
                     </div>
                  
                     <div class="col-md-12">
@@ -407,13 +413,13 @@
 
                     <div class="col-md-12">
                         <a href="{{route('galeri')}}" class="font-weight-bold font14 text-decoration-none mb-3"
-                            style="color: #10A5F5;">Lihat Lebih Banyak</a>
+                            style="color: #058532;">Lihat Lebih Banyak</a>
                     </div>
                     <!-- end fasilitas section -->
 
                     <!-- eskul section -->
                     <div class="col-md-12 mb-3 mt-4" id="eskul">
-                        <h4 class="font18" style="color:#10A5F5;"><i class="fas fa-video"></i> EKSTRAKULIKULER</h4>
+                        <h4 class="font18" style="color:#058532;"><i class="fas fa-video"></i> EKSTRAKULIKULER</h4>
                     </div>
 
                     <div class="col-md-12">
@@ -436,7 +442,7 @@
 
                     <div class="col-md-12">
                         <a href="{{route('eskul')}}" class="font-weight-bold font14 text-decoration-none mb-3"
-                            style="color: #10A5F5;">Lihat Lebih Banyak</a>
+                            style="color: #058532;">Lihat Lebih Banyak</a>
                     </div>
 
                     <!-- end eskul section -->
@@ -447,7 +453,7 @@
 
                 <!-- agenda section -->
                 <div class="title mb-4">
-                    <h4 class="font18" style="color:#10A5F5;"><i class="fa fa-calendar" aria-hidden="true"></i> AGENDA
+                    <h4 class="font18" style="color:#058532;"><i class="fa fa-calendar" aria-hidden="true"></i> AGENDA
                         TERBARU</h4>
                 </div>
 
@@ -466,7 +472,7 @@
                     </div>
                     <div class="col-md-12">
                         <a href="{{route('agenda')}}" class="font-weight-bold font14 text-decoration-none mb-3"
-                            style="color: #10A5F5;">Lihat Lebih Banyak</a>
+                            style="color: #058532;">Lihat Lebih Banyak</a>
                     </div>
                 </div>
                 @endforeach
@@ -475,7 +481,7 @@
 
                 <!-- kategori section -->
                 <div class="title mb-4 mt-5">
-                    <h4 class="font18" style="color:#10A5F5;"><i class="fa fa-folder" aria-hidden="true"></i> PENGUMUMAN
+                    <h4 class="font18" style="color:#058532;"><i class="fa fa-folder" aria-hidden="true"></i> PENGUMUMAN
                     </h4>
                 </div>
 
@@ -486,7 +492,7 @@
                 </div>
                 <div class="col-md-12">
                     <a href="{{route('pengumuman')}}" class="font-weight-bold font14 text-decoration-none mb-3"
-                        style="color: #10A5F5;">Lihat Lebih Banyak</a>
+                        style="color: #058532;">Lihat Lebih Banyak</a>
                 </div>
             </div>
             @endforeach
@@ -502,17 +508,17 @@
     <!-- prestasi -->
     <div class="container-fluid">
         <div class="col-md-12 mb-3" id="prestasi">
-            <h4 class="text-center font18" style="color:#10A5F5;"><i class="fas fa-trophy"></i> PRESTASI SEKOLAH</h4>
+            <h4 class="text-center font18" style="color:#058532;"><i class="fas fa-trophy"></i> PRESTASI SEKOLAH</h4>
         </div>
         <div class="col-md-12">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead class="text-center">
-                        <th style="background:#10A5F5;color:#fff;">No</th>
-                        <th style="background:#10A5F5;color:#fff;">Nama&nbsp;Lomba</th>
-                        <th style="background:#10A5F5;color:#fff;">Bidang</th>
-                        <th style="background:#10A5F5;color:#fff;">Juara</th>
-                        <th style="background:#10A5F5;color:#fff;">Keterangan</th>
+                        <th style="background:#058532;color:#fff;">No</th>
+                        <th style="background:#058532;color:#fff;">Nama&nbsp;Lomba</th>
+                        <th style="background:#058532;color:#fff;">Bidang</th>
+                        <th style="background:#058532;color:#fff;">Juara</th>
+                        <th style="background:#058532;color:#fff;">Keterangan</th>
                     </thead>
                     <?php $no = 1; ?>
 
@@ -532,13 +538,13 @@
         </div>
         <div class="col-md-12">
             <a href="{{route('prestasi')}}" class="font-weight-bold font14 text-decoration-none mb-3"
-                style="color: #10A5F5;">Lihat Lebih Banyak</a>
+                style="color: #058532;">Lihat Lebih Banyak</a>
         </div>
     </div>
 
 
     <br><br>
-    <footer class="mt-5" id="foot">
+    <footer class="mt-5" id="foot" style="background-color:#058532;">
         <div class="col-md-12">
             <div class="row">
 
@@ -584,7 +590,7 @@
             <div class="kontent">
                 <p style="background-color: ">
                     <center>
-                        <span>SMP PGRI Ciranjang &copy;
+                        <span>SMK PLUS INSAN ANDALAN CIANJUR &copy;
                             <a href="https://www.facebook.com/farijan.muhamad/" target="_blank"
                                 class="text-dark">Design
                                 by. Muhamad
@@ -606,6 +612,19 @@
     <script src="{{asset('assets/js/fontawesome.min.js')}}"></script>
     <script src="{{asset('datatable/js/jquery.dataTables.js')}}"></script>
     <script src="{{asset('datatable/js/dataTables.min.js')}}"></script>
+
+    <script>
+        window.setTimeout("waktu()", 1000);
+
+        function waktu() {
+            var waktu = new Date();
+            setTimeout("waktu()", 1000);
+            document.getElementById("jam").innerHTML = waktu.getHours();
+            document.getElementById("menit").innerHTML = waktu.getMinutes();
+            document.getElementById("detik").innerHTML = waktu.getSeconds();
+        }
+
+    </script>
 
     <script>
         $(document).ready(function () {

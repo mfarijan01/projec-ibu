@@ -5,13 +5,13 @@
 @section('header')
 <header class="pt-3 border-bottom">
     <div class="container pt-md-1 pb-md-1">
-        <h3 class="bd-title mt-3 mb-4 font-weight-bold" style="color: #0099ff;"><i class="fas fa-chart-line" aria-hidden="true"></i> Silabus</h3>
+        <h3 class="bd-title mt-3 mb-4 font-weight-bold" style="color: #058532;"><i class="fas fa-chart-line" aria-hidden="true"></i> Silabus</h3>
     </div>
 </header>
 
-<nav aria-label="breadcrumb" style="background:#0099ff;color:#fff;">
+<nav aria-label="breadcrumb" style="background:#058532;color:#fff;">
     <div class="container">
-        <ol class="breadcrumb" style="background:#0099ff;color:#fff;">
+        <ol class="breadcrumb" style="background:#058532;color:#fff;">
             <li class="breadcrumb-item"><a href="/" style="color:#fff;text-decoration:none;"><i class="fas fa-home"></i> Home</a></li>
             <li class="breadcrumb-item"><a href="#" style="color:#fff;text-decoration:none;"><i class="fas fa-chart-line"></i> Silabus</a></li>
         </ol>
@@ -22,10 +22,10 @@
 <table class="table table-bordered" id="format">
                             <thead>
                             <tr>
-                                <th style="background:#3498db;color:#fff; scope="col" style="text-align: center;width: 6%">NO.</th>
-                                <th style="background:#3498db;color:#fff; scope="col">JUDUL</th>
-                                <th style="background:#3498db;color:#fff; scope="col">KETERANGAN</th>
-                                <th style="background:#3498db;color:#fff; scope="col">FILE</th>
+                                <th style="background:#058532;color:#fff; scope="col" style="text-align: center;width: 6%">NO.</th>
+                                <th style="background:#058532;color:#fff; scope="col">JUDUL</th>
+                                <th style="background:#058532;color:#fff; scope="col">KETERANGAN</th>
+                                <th style="background:#058532;color:#fff; scope="col">FILE</th>
                             </tr>
                             </thead>
                             <tbody>
